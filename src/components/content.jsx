@@ -68,7 +68,8 @@ function Content() {
 
     const fetchNews = async () => {
 
-        const res = await Axios.get(`https://newsapi.org/v2/top-headlines?country=us&from=${date}&page=${page}&pageSize=5&apiKey=889c04b5a7e844c8bf6bbf5e1ac65732`);
+        const res = await Axios.get(`https://newsapi.org/v2/top-headlines?country=us&from=${date}&page=${page}&pageSize=5&apiKey=889c04b5a7e844c8bf6bbf5e1ac65732`)
+            .then((err) => { return err });
 
         const finalData = res.data.articles;
 
